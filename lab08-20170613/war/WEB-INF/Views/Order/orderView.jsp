@@ -4,85 +4,54 @@
 <%   
 Order a = (Order)request.getAttribute("order"); 
 %> 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Rey de Reyes</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
-<style>
-.jumbotron{
-	background-color:#1bac91;
-	padding:90px 0 70px;
-	color:#fcfcfc;
-}
-.breadcrumb{
-	background-color:#C0FCD1;
-}
-.titulo-blog{
-	color:#fff;
-	font-size:50px;
-}
-</style>
-</head>
-
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/index.html"> Rey de Reyes</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button> 
-		
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item active">
-    					<a class="nav-link" href="/index.html">Inicio</a>
-  					</li>
-  					<li class="nav-item">
-      					<a class="nav-link" href="/roles" class="text-white h4">Roles</a>	
-  					</li>
-        			<li class="nav-item">
-      					<a class="nav-link" href="/users">Users</a>	
-  					</li>
-        			<li class="nav-item">
-      					<a class="nav-link" href="/resources">Resource</a>	
-  					</li>
-        			<li class="nav-item">
-      					<a class="nav-link" href="/access">Access</a>	
-  					</li>
-  					<li class="nav-item">
-   		 				<a class="nav-link" href="/products">Products</a>
-  					</li>
-  					<li class="nav-item">
-   		 				<a class="nav-link" href="/orders">Pedido</a>
-  					</li>
-  					<li class="nav-item">
-    					<a class="nav-link" href="/email">Login</a>
-  					</li>
-  					<li class="nav-item">
-    					<a class="nav-link" href="/email">Logout</a>
-  					</li>
-  					<li class="nav-item">
-    					<a class="nav-link" href="/Videos.html"> Link Videos Codigo</a>
-  					</li>
-		</div>
-	</nav>
-	
-    <section class="jumbotron">
-    	<div class="container">
-        	<center><h1 class="titulo-blog">Papeleria <strong>Rey de Reyes</strong></h1></center>
-        </div>
-     </section>
-     
-     <div class="container-fluid">
-<div class="row">
-       <div class="col-sm-2" > ACTIONS: <br> <a href="/orders">List Orders </a> 
-       <br> <a href="/bills">Generar Factura</a> </div>
-        <div class="col-sm-9 ml-auto">	
- <table class="table">
+<html> 
+<head> 
+<title>Pedido</title> 
+ <style type="text/css">
+  body {
+  margin:0;
+   padding:0;
+   background:#ccccff;
+   font-family: Verdana, Arial, sans-serif;
+    }
+  
+ #menuV h4{
+ 	font-family:arial, sans-serif;
+ 	font-weight: 400;
+ 	height: 40px;
+ 	background: #16A5C7;
+ 	width: 100%;
+ 	color:white;
+ 	line-height:50px;
+ }
+  </style>
+</head> 
+<body>  
+<div >
+<h1>REY DE REYES</h1>
+ <ul>
+	<li><a href="/roles"/>Roles</a>	</li>
+	<li><a href="/users"/>Users</a>	</li>
+	<li><a href="/resources"/>Resources</a>	</li>
+	<li><a href="/access"/>Access</a>	</li>
+	<li><a href="/orders"/>Pedidos</a>	</li>
+	<li><a href="/users/login"/>Login</a> </li>
+	<li><a href="/users/logout"/>Logout</a>	</li>
+ </ul>  
+</div>
+<div id="menuV">
+	<h4 >Acciones</h4>
+	 <ul>
+	    <li><a href="/orders/edit?orderId=<%= a.getIdOrder()%>">Editar Orden</a> </li>
+        <li><a href="/orders/delete?orderId=<%= a.getIdOrder()%>">Borrar</a></li>
+        <li><a href="/orders">Lista de Pedidos</a> </li>
+        <li><a href="/orders/add"/>Crear nuevo Pedido</a></li>
+        <li><a href="/bills/add?orderId=<%=a.getIdOrder()%>">Generar factura</a></li>
+        
+    </ul>
+</div>
+<div align="center">
+ <table>
 	<tr>
 	<td>ID: <%=a.getIdOrder() %></td>
 	</tr>
@@ -112,6 +81,6 @@ Order a = (Order)request.getAttribute("order");
          </tr>
          
  </table>       
-</div>  </div> </div>     
+</div>       
 </body> 
 </html> 

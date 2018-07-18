@@ -119,7 +119,7 @@ public class ReportsControllerAdd extends HttpServlet {
 			
 			Users usuario= pm.getObjectById(Users.class,idLong);
 			
-			double montoTotal=usuario.getMontoAdquirido()+total;
+		double montoTotal=usuario.getMontoAdquirido()+total;
 			int cantidadPedidos=((Users) usuario).getCantidadPedidos()+1;
 			usuario.setMontoAdquirido(montoTotal);
 			usuario.setCantidadPedidos(cantidadPedidos);

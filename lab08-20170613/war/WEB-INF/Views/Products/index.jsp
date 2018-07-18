@@ -73,7 +73,6 @@
 	<div class="row">   
         <div class="col-sm-1" > ACTIONS: <br> <a href="/products/add">New Product </a> 
  			<br /> <a href="/orders/add">Realizar mas pedido </a> <br />  <br />
-        		   <a href="/products/populares"> Productos Mas Pedidos </a><br /> <br />
         </div>
         
 
